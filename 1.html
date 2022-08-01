@@ -15,7 +15,14 @@
             <title>hydrogenated233</title>
                 </head>
                     <body>
-                        <script >
+                        <script>
+                            var a = 0
+                        </script>
+                        <script type="text/javascript">
+                        function myFunction() {
+                            var a= document.getElementById("test").value
+                            window.Location = "https://www.google.com/search?q="+a
+                        }
                         function nowTime(){
                           var t = new Date();//获取当前时间
                           var year = t.getFullYear();//获取当前时间的年份
@@ -37,6 +44,8 @@
      </script>
     <h1>hello</h1>
     <hr>
+    <button onclick="myFunction()">wow</button>
+    <input type="text" id="test" style="width:200px;">
     <a href="index.html">page1</a>
 
     <p id="demo"></p>
