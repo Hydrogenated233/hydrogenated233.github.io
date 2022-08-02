@@ -16,11 +16,11 @@
                 </head>
                     <body>
                         <script>
-                            var a = 0
+                            var a = "0"
                         </script>
                         <script>
-                        function myFunction() {
-                            window.open = "https://www.google.com"
+                        function open() {
+                            window.open = `https://www.google.com/search?q=${a}`
                         }
                         function nowTime(){
                           var t = new Date();//获取当前时间
@@ -43,7 +43,7 @@
      </script>
     <h1>hello</h1>
     <hr>
-    <button onclick="myFunction()">wow</button>
+    <button onclick="open()">wow</button>
     <input type="text" id="test" style="width:200px;">
     <a href="index.html">page1</a>
     <a href="mailto:zengfanu@gmail.com">Email</a>
