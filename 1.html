@@ -20,7 +20,8 @@
                         </script>
                         <script>
                         function open() {
-                            window.open = `https://www.google.com/search?q=${a}`
+                            getElementById("test").value=a
+                            window.location.href = `https://www.google.com/search?q=${a}`
                         }
                         function nowTime(){
                           var t = new Date();//获取当前时间
