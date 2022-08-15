@@ -20,27 +20,11 @@
                         </script>
                         <script>
                         function open() {
-                            alert("hello wolrd!");
+                            getElementById("test").value=a
+                            window.location.href = `https://www.google.com/search?q=${a}`
                         }
-                        function nowTime(){
-                          var t = new Date();//获取当前时间
-                          var year = t.getFullYear();//获取当前时间的年份
-                          var month = t.getMonth()+1;//获取当前时间的月份
-                          var day = t.getDate();//获取当前时间的日
-                          var week = t.getDay();//获取当前时间的星期
-                          var arr = new Array ("星期一","星期二","星期三","星期四","星期五","星期六","星期日",);//规划星期的输出
-                          var hour = t.getHours();//获取当前时间的时
-                          var minute = t.getMinutes();//获取当前时间的分
-                          var second = t.getSeconds();//获取当前时间的秒
-                          var nowTime = year+"/"+month+"/"+day+" "+arr[week]+" "+hour+((minute<10)?":0":":")
-                          +minute+((second<10)?":0":":")+second+" "+((hour>12)?"下午":"上午");//规划时间的输出
-                          document.getElementById("time").value=nowTime;//将值赋予#time
-                        }
-                        setInterval("nowTime()",1000);
-                      </script>
-                      <input type="text" id="time" style="width:200px;">
+                        </script>
                       <h5>點他</h5>
-     </script>
     <h1>hello</h1>
     <hr>
     <button onclick="open()">wow</button>
