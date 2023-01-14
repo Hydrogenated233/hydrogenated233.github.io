@@ -1,8 +1,8 @@
 let modInfo = {
-	name: "The Light Tree",
+	name: "光之樹",
 	id: "light_tree",
 	author: "Hydrogenated233",
-	pointsName: "light",
+	pointsName: "光",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "EricZeng",
@@ -14,7 +14,7 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "0.1",
-	name: "Literally nothing",
+	name: "開始",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -22,7 +22,7 @@ let changelog = `<h1>Changelog:</h1><br>
 		- Added things.<br>
 		- Added stuff.`
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+let winText = `你竟然完成了這個超級難的樹！但你還可以繼續游戲或者重新游玩！`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -43,6 +43,11 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade('e', 11)) gain = gain.add(1)
+	if (hasUpgrade('e', 12)) gain = gain.times(upgradeEffect('e', 12))
+	if (hasUpgrade('l', 11)) gain = gain.times(upgradeEffect('l', 11))
+	if (hasUpgrade('e', 13)) gain = gain.times(upgradeEffect('e', 13))
+	if (hasUpgrade('e', 14)) gain = gain.times(upgradeEffect('e', 14))
 	return gain
 }
 
@@ -52,6 +57,7 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
+	function() {if (player.points.gt(0)) return `你有 ${player.points} 光`},
 ]
 
 // Determines when the game "ends"

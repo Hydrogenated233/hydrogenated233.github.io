@@ -229,7 +229,7 @@ function loadOptions() {
 
 function setupModInfo() {
 	modInfo.changelog = changelog;
-	modInfo.winText = winText ? winText : `Congratulations! You have reached the end and beaten this game, but for now...`;
+	modInfo.winText = winText ? winText : `你竟然完成了這個超級難的樹！但你還可以繼續游戲或者重新游玩！`;
 
 }
 function fixNaNs() {

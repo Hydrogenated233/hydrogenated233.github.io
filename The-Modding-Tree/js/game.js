@@ -129,7 +129,7 @@ function canReset(layer)
 function rowReset(row, layer) {
 	for (lr in ROW_LAYERS[row]){
 		if(layers[lr].doReset) {
-			if (!isNaN(row)) Vue.set(player[lr], "activeChallenge", null) // Exit challenges on any row reset on an equal or higher row
+			if (!isNaN(row)) Vue.set(player[lr], "正在進行的挑戰", null) // Exit challenges on any row reset on an equal or higher row
 			run(layers[lr].doReset, layers[lr], layer)
 		}
 		else
@@ -229,7 +229,7 @@ function doReset(layer, force=false) {
 }
 
 function resetRow(row) {
-	if (prompt('Are you sure you want to reset this row? It is highly recommended that you wait until the end of your current run before doing this! Type "I WANT TO RESET THIS" to confirm')!="I WANT TO RESET THIS") return
+	if (prompt('你確定你要重置嗎? 輸入"我要重置" 確定')!="我要重置") return
 	let pre_layers = ROW_LAYERS[row-1]
 	let layers = ROW_LAYERS[row]
 	let post_layers = ROW_LAYERS[row+1]
@@ -249,13 +249,13 @@ function startChallenge(layer, x) {
 	if (!player[layer].unlocked || !tmp[layer].challenges[x].unlocked) return
 	if (player[layer].activeChallenge == x) {
 		completeChallenge(layer, x)
-		Vue.set(player[layer], "activeChallenge", null)
+		Vue.set(player[layer], "正在進行的挑戰", null)
 		} else {
 		enter = true
 	}	
 	doReset(layer, true)
 	if(enter) {
-		Vue.set(player[layer], "activeChallenge", x)
+		Vue.set(player[layer], "正在進行的挑戰", x)
 		run(layers[layer].challenges[x].onEnter, layers[layer].challenges[x])
 	}
 	updateChallengeTemp(layer)
@@ -292,7 +292,7 @@ function completeChallenge(layer, x) {
 	
 	let completions = canCompleteChallenge(layer, x)
 	if (!completions){
-		Vue.set(player[layer], "activeChallenge", null)
+		Vue.set(player[layer], "正在進行的挑戰", null)
 		run(layers[layer].challenges[x].onExit, layers[layer].challenges[x])
 		return
 	}
@@ -302,12 +302,12 @@ function completeChallenge(layer, x) {
 		player[layer].challenges[x] = Math.min(player[layer].challenges[x], tmp[layer].challenges[x].completionLimit)
 		if (layers[layer].challenges[x].onComplete) run(layers[layer].challenges[x].onComplete, layers[layer].challenges[x])
 	}
-	Vue.set(player[layer], "activeChallenge", null)
+	Vue.set(player[layer], "正在進行的挑戰", null)
 	run(layers[layer].challenges[x].onExit, layers[layer].challenges[x])
 	updateChallengeTemp(layer)
 }
 
-VERSION.withoutName = "v" + VERSION.num + (VERSION.pre ? " Pre-Release " + VERSION.pre : VERSION.pre ? " Beta " + VERSION.beta : "")
+VERSION.withoutName = "v" + VERSION.num + (VERSION.pre ? " Pre-Release " + VERSION.pre : VERSION.pre ? " Beta " + VERSION.beta : "0.0.1")
 VERSION.withName = VERSION.withoutName + (VERSION.name ? ": " + VERSION.name : "")
 
 
@@ -384,7 +384,7 @@ function gameLoop(diff) {
 }
 
 function hardReset(resetOptions) {
-	if (!confirm("Are you sure you want to do this? You will lose all your progress!")) return
+	if (!confirm("你確定要重置嗎？這個操作是不可逆的！")) return
 	player = null
 	if(resetOptions) options = null
 	save(true);
