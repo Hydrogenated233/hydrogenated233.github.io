@@ -43,14 +43,21 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(player.l.points.add(1).pow(0.2).add(player.m.points.add(1).pow(0.21)))
+	if (hasUpgrade('m', 12)) gain = gain.times(upgradeEffect('m', 12))
+	if (hasUpgrade('m', 13)) gain = gain.times(upgradeEffect('m', 13))
+	if (hasUpgrade('m', 14)) gain = gain.times(upgradeEffect('m', 14))
+	if (hasUpgrade('m', 15)) gain = gain.times(upgradeEffect('m', 15))
 	if (hasUpgrade('l', 12)) gain = gain.times(upgradeEffect('l', 12))
 	if (hasUpgrade('l', 13)) gain = gain.times(upgradeEffect('l', 13))
+	if (hasUpgrade('l', 14)) gain = gain.times(upgradeEffect('l', 14))
 	if (hasUpgrade('l', 14)) gain = gain.times(upgradeEffect('l', 14))
 	if (hasUpgrade('e', 12)) gain = gain.times(upgradeEffect('e', 12))
 	if (hasUpgrade('e', 13)) gain = gain.times(upgradeEffect('e', 13))
 	if (hasUpgrade('e', 14)) gain = gain.times(upgradeEffect('e', 14))
+	if (hasUpgrade('e', 15)) gain = gain.times(upgradeEffect('e', 15))
 	if (hasUpgrade('e', 11)) gain = gain.add(1)
 	if (hasUpgrade('l', 11)) gain = gain.add(100)
+	if (hasUpgrade('m', 11)) gain = gain.add(10000)
 	return gain
 }
 
@@ -60,12 +67,12 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
-	function() {if (player.points.gt(0)) return `你有 ${player.points} 光`},
+
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return player.points.gte(new Decimal("1e12"))
 }
 
 
