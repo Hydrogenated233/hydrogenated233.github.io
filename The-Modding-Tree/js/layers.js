@@ -99,6 +99,17 @@ addLayer("e", {
             cost: new Decimal(300),
             unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
             tooltip: "購買大火箭！",
+        },
+        16: {
+            title: "迭代幂次",
+            effect() {
+                return player[this.layer].points.pow(1.3).pow(1.2)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id)) + "x" }, // Add formatting to the effect
+            description: "更據能量增加超级多點數獲得速度",
+            cost: new Decimal(400),
+            unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
+            tooltip: "飛向宇宙！",
         }
 
     },
@@ -107,7 +118,7 @@ addLayer("e", {
     baseResource: "光", // Name of resource prestige is based on
     baseAmount() { return player.points }, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.4, // Prestige currency exponent
+    exponent: 0.2, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -183,6 +194,17 @@ addLayer("e", {
                 cost: new Decimal(30000),
                 unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
                 tooltip: "購買大火箭！",
+            },
+            16: {
+                title: "迭代幂次2.0",
+                effect() {
+                    return player[this.layer].points.pow(1.3).pow(1.4)
+                },
+                effectDisplay() { return format(upgradeEffect(this.layer, this.id)) + "x" }, // Add formatting to the effect
+                description: "更據能量增加超级多點數獲得速度",
+                cost: new Decimal(40000),
+                unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
+                tooltip: "飛向宇宙！",
             }
 
         },
@@ -267,6 +289,17 @@ addLayer("e", {
                 cost: new Decimal(3000000),
                 unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
                 tooltip: "購買大火箭！",
+            },
+            16: {
+                title: "迭代幂次3.0",
+                effect() {
+                    return player[this.layer].points.pow(1.5).pow(1.6)
+                },
+                effectDisplay() { return format(upgradeEffect(this.layer, this.id)) + "x" }, // Add formatting to the effect
+                description: "更據能量增加超级多點數獲得速度",
+                cost: new Decimal(4000000),
+                unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
+                tooltip: "飛向宇宙！",
             }
 
         },

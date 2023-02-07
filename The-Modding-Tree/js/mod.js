@@ -47,14 +47,17 @@ function getPointGen() {
 	if (hasUpgrade('m', 13)) gain = gain.times(upgradeEffect('m', 13))
 	if (hasUpgrade('m', 14)) gain = gain.times(upgradeEffect('m', 14))
 	if (hasUpgrade('m', 15)) gain = gain.times(upgradeEffect('m', 15))
+	if (hasUpgrade('m', 16)) gain = gain.times(upgradeEffect('m', 16))
 	if (hasUpgrade('l', 12)) gain = gain.times(upgradeEffect('l', 12))
 	if (hasUpgrade('l', 13)) gain = gain.times(upgradeEffect('l', 13))
 	if (hasUpgrade('l', 14)) gain = gain.times(upgradeEffect('l', 14))
-	if (hasUpgrade('l', 14)) gain = gain.times(upgradeEffect('l', 14))
+	if (hasUpgrade('l', 15)) gain = gain.times(upgradeEffect('l', 15))
+	if (hasUpgrade('l', 16)) gain = gain.times(upgradeEffect('l', 16))
 	if (hasUpgrade('e', 12)) gain = gain.times(upgradeEffect('e', 12))
 	if (hasUpgrade('e', 13)) gain = gain.times(upgradeEffect('e', 13))
 	if (hasUpgrade('e', 14)) gain = gain.times(upgradeEffect('e', 14))
 	if (hasUpgrade('e', 15)) gain = gain.times(upgradeEffect('e', 15))
+	if (hasUpgrade('e', 16)) gain = gain.times(upgradeEffect('e', 16))
 	if (hasUpgrade('e', 11)) gain = gain.add(1)
 	if (hasUpgrade('l', 11)) gain = gain.add(100)
 	if (hasUpgrade('m', 11)) gain = gain.add(10000)
@@ -67,12 +70,14 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
-
+	function() { return '當前結局：1e50' },
+	function() { return '發送答案至zengfanu@gmail.com可獲得1張紙'},
+	function() { return 'x=x+1'}
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("1e12"))
+	return player.points.gte(new Decimal("1e50"))
 }
 
 
