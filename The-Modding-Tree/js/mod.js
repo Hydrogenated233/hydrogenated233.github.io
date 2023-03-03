@@ -71,8 +71,7 @@ function addedPlayerData() { return {
 // Display extra things at the top of the page
 var displayThings = [
 	function() { return '當前結局：1e50' },
-	function() { return '發送答案至zengfanu@gmail.com可獲得1張紙'},
-	function() { return 'x=x+1'}
+	function() { return '哇，现在Scratch的一个工作室很出名!你要不要加入呢? scratch.mit.edu/studios/32807356'}
 ]
 
 // Determines when the game "ends"
