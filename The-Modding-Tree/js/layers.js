@@ -145,14 +145,14 @@ addLayer("e", {
         color: "#FFFFFF",
         upgrades: {
             11: {
-                title: "開始2.0",
+                title: "重新开始",
                 description: "增加100光每秒獲得",
                 cost: new Decimal(100),
                 unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
                 tooltip: "你的第一步！",
             },
             12: {
-                title: "加成2.0",
+                title: "有点熟悉啊",
                 effect() {
                     return player[this.layer].points.add(1).pow(0.9)
                 },
@@ -163,7 +163,7 @@ addLayer("e", {
                 tooltip: "加速！！！",
             },
             13: {
-                title: "乘數2.0",
+                title: "其实就是改数字麻",
                 effect() {
                     return player[this.layer].points.add(1).pow(1.002)
                 },
@@ -174,7 +174,7 @@ addLayer("e", {
                 tooltip: "一飛衝天！",
             },
             14: {
-                title: "二次方2.0",
+                title: "想不出来了啦",
                 effect() {
                     return player[this.layer].points.pow(0.6)
                 },
@@ -185,7 +185,7 @@ addLayer("e", {
                 tooltip: "購買火箭！",
             },
             15: {
-                title: "三次方2.0",
+                title: "还差亿点",
                 effect() {
                     return player[this.layer].points.pow(0.1)
                 },
@@ -196,7 +196,7 @@ addLayer("e", {
                 tooltip: "購買大火箭！",
             },
             16: {
-                title: "迭代幂次2.0",
+                title: "最后一步",
                 effect() {
                     return player[this.layer].points.pow(1.3).pow(1.4)
                 },
@@ -240,14 +240,14 @@ addLayer("e", {
         color: "#0000FF",
         upgrades: {
             11: {
-                title: "開始3.0",
+                title: "开      始",
                 description: "增加10000光每秒獲得",
                 cost: new Decimal(10000),
                 unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
                 tooltip: "你的第一步！",
             },
             12: {
-                title: "加成3.0",
+                title: "这次没有",
                 effect() {
                     return player[this.layer].points.add(1).pow(0.9)
                 },
@@ -258,7 +258,7 @@ addLayer("e", {
                 tooltip: "加速！！！",
             },
             13: {
-                title: "乘數3.0",
+                title: "别看我啊",
                 effect() {
                     return player[this.layer].points.add(1).pow(1.002)
                 },
@@ -269,7 +269,7 @@ addLayer("e", {
                 tooltip: "一飛衝天！",
             },
             14: {
-                title: "二次方3.0",
+                title: "快没了",
                 effect() {
                     return player[this.layer].points.pow(0.6)
                 },
@@ -280,7 +280,7 @@ addLayer("e", {
                 tooltip: "購買火箭！",
             },
             15: {
-                title: "三次方3.0",
+                title: "好像没啥用",
                 effect() {
                     return player[this.layer].points.pow(0.1)
                 },
