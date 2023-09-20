@@ -291,7 +291,7 @@ addLayer("e", {
                 tooltip: "購買大火箭！",
             },
             16: {
-                title: "迭代幂次3.0",
+                title: "玩完了",
                 effect() {
                     return player[this.layer].points.pow(1.5).pow(1.6)
                 },
