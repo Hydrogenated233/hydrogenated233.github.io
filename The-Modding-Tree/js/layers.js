@@ -303,7 +303,7 @@ addLayer("e", {
             }
 
         },
-        requires: new Decimal(1000000), // Can be a function that takes requirement increases into account
+        requires: new Decimal(1), // Can be a function that takes requirement increases into account
         resource: "磁力", // Name of prestige currency
         baseResource: "能量" && "電量", // Name of resource prestige is based on
         baseAmount() { return player.e.points && player.l.points }, // Get the current amount of baseResource
@@ -329,10 +329,10 @@ addLayer("e", {
         startData() {
             return {
                 unlocked: true,
-                points: new Decimal(0),
+                points: new Decimal(10000),
             }
         },
-        color: "#0000FF",
+        color: "#00FFFF",
         upgrades: {
             11: {
                 title: "真     开     始",
@@ -382,7 +382,7 @@ addLayer("e", {
                 effectDisplay() { return format(upgradeEffect(this.layer, this.id)) + "x" }, // Add formatting to the effect
                 description: "跟据磁力增加一點點的點數獲得速度",
                 cost: new Decimal(3000000),
-                unlocked() { return player[this.layer].upgrades.14.unlocked }, // The upgrade is only visible when this is true
+                unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
                 tooltip: "購買大火箭！",
             },
             16: {
@@ -393,17 +393,17 @@ addLayer("e", {
                 effectDisplay() { return format(upgradeEffect(this.layer, this.id)) + "x" }, // Add formatting to the effect
                 description: "更據能量增加超级多點數獲得速度",
                 cost: new Decimal(4000000),
-                unlocked() { return player[this.layer].upgrades.15.unlocked }, // The upgrade is only visible when this is true
+                unlocked() { return player[this.layer]unlocked }, // The upgrade is only visible when this is true
                 tooltip: "飛向宇宙！",
             }
 
         },
-        requires: new Decimal(100000000), // Can be a function that takes requirement increases into account
-        resource: "磁力", // Name of prestige currency
+        requires: new Decimal(1), // Can be a function that takes requirement increases into account
+        resource: "电磁力", // Name of prestige currency
         baseResource: "磁力" && "電量", // Name of resource prestige is based on
         baseAmount() { return player.m.points && player.l.points }, // Get the current amount of baseResource
         type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-        exponent: 0.4, // Prestige currency exponent
+        exponent: 0.9, // Prestige currency exponent
         gainMult() { // Calculate the multiplier for main currency from bonuses
             mult = new Decimal(1)
             return mult
