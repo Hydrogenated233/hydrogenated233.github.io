@@ -57,10 +57,15 @@ function getPointGen() {
 	if (hasUpgrade('e', 13)) gain = gain.times(upgradeEffect('e', 13))
 	if (hasUpgrade('e', 14)) gain = gain.times(upgradeEffect('e', 14))
 	if (hasUpgrade('e', 15)) gain = gain.times(upgradeEffect('e', 15))
-	if (hasUpgrade('e', 16)) gain = gain.times(upgradeEffect('e', 16))
-	if (hasUpgrade('e', 11)) gain = gain.add(1)
+	if (hasUpgrade('e', 16)) gain = gain.times
+	if (hasUpgrade('em', 12)) gain = gain.times(upgradeEffect('em', 12))
+	if (hasUpgrade('em', 13)) gain = gain.times(upgradeEffect('em', 13))
+	if (hasUpgrade('em', 14)) gain = gain.times(upgradeEffect('em', 14))
+	if (hasUpgrade('em', 15)) gain = gain.times(upgradeEffect('em', 15))
+	if (hasUpgrade('em', 16)) gain = gain.times(upgradeEffect('em', 16))(hasUpgrade('em', 11)) gain = gain.add(1)
 	if (hasUpgrade('l', 11)) gain = gain.add(100)
 	if (hasUpgrade('m', 11)) gain = gain.add(10000)
+	if (hasUpgrade('em', 11)) gain = gain.add(1000000)
 	return gain
 }
 
