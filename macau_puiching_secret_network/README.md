@@ -1,2 +1,2 @@
 # macau-puiching-secret-network.github.io
-Macau Puizheng students only, it is forbidden to invite teachers!
+[Macau PuiChing](https://eclass.puiching.edu.mo/templates/) students only, it is forbidden to invite teachers!
