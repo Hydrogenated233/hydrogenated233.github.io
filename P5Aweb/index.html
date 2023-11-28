@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ch">
+    <head>
+        <meta charset="UTF-8">
+        <title>小五信班网站</title>
+        <style>
+           @import url(style.css);
+        </style>
+    </head>
+    <body>
+    <h1>小五信班网站</h1>
+    <div id="show_time">
+        <script>
+            setInterval("fun(show_time)",1);
+            function fun(timeID){
+                var date = new Date();
+                var y = date.getFullYear();
+                var m =date.getMonth()+1;   //获取月份  返回0-11
+                var d = date.getDate();
+                var w = date.getDay();   //获取星期几  返回0-6   (0=星期天)
+                var ww = ' 星期'+'日一二三四五六'.charAt(new Date().getDay());
+                var h = date.getHours();
+                var minute = date.getMinutes();
+                var s = date.getSeconds();
+                var sss = date.getMilliseconds();
+                if(m<10){
+                    m = "0"+m;
+                }
+                if(d<10){
+                    d = "0"+d;
+                }
+                if(h<10){
+                    h = "0"+h;
+                }
+
+                if(minute<10){
+                    minute = "0"+minute;
+                }
+
+                if(s<10){
+                    s = "0"+s;
+                }
+                if(sss<10){
+                    sss = "00"+sss;
+                }else if(sss<100){
+                    sss = "0"+sss;
+                }
+                document.getElementById(timeID.id).innerHTML = "现在是" + y+"年"+m+"月"+d+"日  "+h+"时"+minute+"分"+s+"秒 "+ww;
+              }
+        </script>
+    </div>
+    <marquee width="40%" height=5%" bgcolor="#0099FF"  direction="up" scrollamount="1">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">点我获取管理员权限</a>
+        <li>这是一个滚动新闻</li>
+        <li>大家好啊！</li>
+    </marquee>
+    <hr>
+    <a href="feature.html">同学的特点</a>
+    </body>
+</html>
